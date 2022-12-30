@@ -351,7 +351,7 @@ body::-webkit-scrollbar-thumb {
   left: 0;
   opacity: 0;
   padding-top: 4rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   row-gap: 3rem;
   position: absolute;
   top: 97px;
@@ -461,7 +461,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .menu__actionBtn {
-  width: 300px;
+  max-width: 300px;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;

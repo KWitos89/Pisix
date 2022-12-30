@@ -28,7 +28,7 @@
         left: 0;
         opacity: 0;
         padding-top: 4rem;
-        padding-bottom: 2rem;
+        padding-bottom: 1rem;
         row-gap: 3rem;
         position: absolute;
         top: 97px;
@@ -156,7 +156,7 @@
 
 
 .menu__actionBtn {
-    width: 300px;
+    max-width: 300px;
     height: max-content;
 
     @media(min-width:48em) {

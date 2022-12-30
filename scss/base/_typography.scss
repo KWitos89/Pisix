@@ -1,0 +1,16 @@
+.accent--title {
+    background-image: var(--color-linear);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav__menu {
+    color: var(--color-nav);
+    font-family: var(--ff-poppins);
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.9285714285714286rem + 0.35714285714285715vw, 1.25rem);
+    font-weight: var(--fw-500);
+    line-height: 14px;
+    text-transform: uppercase;
+}

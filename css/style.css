@@ -268,10 +268,12 @@ body::-webkit-scrollbar-thumb {
   height: 2rem;
   justify-content: space-around;
   padding: 0.5rem 1.2rem;
+  position: relative;
 }
 
 .menu__serachInput {
   outline: none;
+  padding-right: 10px;
 }
 .menu__serachInput::-moz-placeholder {
   color: var(--color-primary);
@@ -381,6 +383,9 @@ body::-webkit-scrollbar-thumb {
 .nav__items:nth-child(1) {
   color: var(--color-hover);
   font-weight: var(--fw-600);
+}
+.nav____searchBtn {
+  position: absolute;
 }
 .nav__serachBox {
   display: none;

@@ -22,6 +22,7 @@
     --color-secondary: rgba(0, 120, 138, 1);
     --color-hover: rgba(8, 48, 56, 1);
     --color-btn: rgba(248, 245, 255, 1);
+    --color-btn-hover: rgba(0, 191, 196, .9);
     --color-linear: linear-gradient(90deg, #00788A 6.67%, #74DCDF 94.66%);
     --color-link: rgba(67, 128, 140, 1);
     --color-nav: rgba(74, 86, 88, 1);
@@ -35,7 +36,8 @@
     --bg-blue: rgba(236, 244, 255, 1);
 
 
-    --shadow-btn: 0px 26px 30px -16px rgba(0, 191, 196, 0.25);
+    --shadow-btn: 0px 26px 20px -16px rgba(0, 191, 196, 0.65);
+    --shadow-btn-hover: 0px 16px 15px -16px rgba(0, 191, 196, 0.95);
     --shadow-btnCircle: 0px 19px 30px -16px rgba(51, 27, 59, 0.25);
     --shadow-card: 0px 60px 80px -14px rgba(218, 0, 0, 0.08);
     --shadow: 0px 21px 33px -10px rgba(37, 126, 129, 0.16);

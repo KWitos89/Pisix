@@ -1,0 +1,28 @@
+.btn {
+    background-color: var(--bg-btn);
+    box-shadow: var(--shadow-btn);
+    border-radius: 6px;
+    display: inline-block;
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.975rem + 0.125vw, 1.125rem);
+    font-family: var(--ff-poppins);
+    position: relative;
+    transition: background-color .25s ease box-shadow .25s ease;
+
+    &:is(:hover, :active) {
+        background-color: var(--color-btn-hover);
+        box-shadow: var(--shadow-btn-hover);
+    }
+}
+
+.btn--large {
+    padding: 14px 24px;
+
+    @media(min-width:62em) {
+        padding: 21px 40px;
+    }
+}
+
+.hero__btn {
+    color: var(--color-btn);
+}

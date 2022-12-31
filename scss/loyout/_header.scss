@@ -24,16 +24,15 @@
         border-radius: 5px;
         display: flex;
         flex-direction: column;
-        height: 55vh;
-        left: 0;
-        opacity: 0;
+        max-height: 55vh;
+        right: 0;
         padding-top: 2rem;
         padding-bottom: 1rem;
         row-gap: 3rem;
         position: absolute;
-        top: 97px;
-        transform: translateY(-1%);
-        transition: .25s linear;
+        top: 98px;
+        transform: translateX(110%);
+        transition: .55s ease-in-out;
         text-align: center;
         width: 100%;
         z-index: -1;
@@ -66,7 +65,8 @@
         color: var(--color-hover);
         font-weight: var(--fw-600);
     }
-    &____searchBtn{
+
+    &____searchBtn {
         position: absolute;
     }
 
@@ -160,6 +160,7 @@
 .menu__actionBtn {
     max-width: 300px;
     height: max-content;
+    margin-inline: auto;
 
     @media(min-width:48em) {
         display: none;
@@ -168,8 +169,6 @@
 
 
 .active__menu {
-    top: 97px;
-    transform: translateY(1%);
-    opacity: 1;
+    transform: translateX(0%);
     overflow: auto;
 }

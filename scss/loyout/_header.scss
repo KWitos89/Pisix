@@ -20,10 +20,11 @@
 
     &__menu {
         align-items: center;
-        background-color: var(--color-primary);
+        background-color: var(--bg-btn);
         border-radius: 5px;
         display: flex;
         flex-direction: column;
+        left: 0;
         max-height: 55vh;
         right: 0;
         padding-top: 2rem;
@@ -31,7 +32,7 @@
         row-gap: 3rem;
         position: absolute;
         top: 98px;
-        transform: translateX(110%);
+        transform: translateX(-110%);
         transition: .55s ease-in-out;
         text-align: center;
         width: 100%;
@@ -167,8 +168,12 @@
     }
 }
 
-
+//  Styles For Menu Active //
 .active__menu {
     transform: translateX(0%);
     overflow: auto;
+}
+
+.body-overflow {
+    overflow: hidden;
 }

@@ -2,7 +2,7 @@ const burger = document.querySelector('.nav__burgerBtn');
 const menu = document.querySelector('.nav__menu');
 const searchBox = document.querySelector('.nav__serachBox');
 const searchBtn = document.querySelector('.nav__searchBtn');
-
+const bodyEl = document.body;
 
 //  Animaited Button Burger //
 
@@ -17,12 +17,19 @@ const clickBurgerBtn = () => {
     };
 };
 
+//  Body Overflow When Menu Active //
+
+const overflow = () => {
+    bodyEl.classList.toggle('body-overflow')
+}
+
 // Open Mobile Menu //
 
 const openMenu = () => {
     menu.classList.toggle('active__menu')
 
     clickBurgerBtn()
+    overflow()
 }
 
 // Close Menu Mobile Click Outside //

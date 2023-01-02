@@ -1,3 +1,5 @@
+//  Search Box Menu Mobile //
+
 .menu__search {
     align-items: center;
     background-color: var(--color-secondary);
@@ -10,16 +12,21 @@
     justify-content: space-around;
     padding:.5rem 1.2rem;
     position: relative;
+    overflow: hidden;
 }
 
 .menu__serachInput {
     outline: none;
-    padding-right: 10px;
+    width: 90%;
     &::placeholder {
         color: var(--color-primary);
     }
+
+
 }
 
+
+//  Search Box Nav //
 .nav__serachBox {
     aspect-ratio: 1/1;
     align-items: center;

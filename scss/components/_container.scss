@@ -3,3 +3,16 @@
     width: calc(100% - 32px);
     margin-inline: auto;
 }
+
+.flex{
+    display: flex;
+    flex-direction: column;
+
+    @media(min-width: 42em){
+        flex-direction: row;
+    }
+}
+
+.grid{
+    display: grid;
+}

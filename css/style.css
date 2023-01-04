@@ -35,6 +35,7 @@
   --bg-lightYellow: rgba(255, 247, 245, 1);
   --bg-green: rgba(240, 255, 250, 1);
   --bg-blue: rgba(236, 244, 255, 1);
+  --shadow-btn-up: 0px -10px 20px -16px rgba(0, 191, 196, 0.65);
   --shadow-btn: 0px 26px 20px -16px rgba(0, 191, 196, 0.65);
   --shadow-btn-hover: 0px 16px 15px -16px rgba(0, 191, 196, 0.95);
   --shadow-btnCircle: 0px 19px 30px -16px rgba(51, 27, 59, 0.25);
@@ -375,8 +376,46 @@ body::-webkit-scrollbar-thumb {
   color: var(--color-btn);
 }
 
+.about__cards {
+  align-items: center;
+  background-color: var(--bg-primary);
+  border-radius: 6px;
+  box-shadow: 0px 2px 20px -8px rgba(0, 0, 0, 0.14);
+  display: flex;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  font-family: var(--ff-poppins);
+  padding: 40px 20px;
+  text-align: left;
+  position: relative;
+}
+.about__cards .cards__content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.about__cards .cards__title {
+  color: var(--color-secondary);
+  font-size: var(--fs-20);
+  font-weight: var(--fw-600);
+  line-height: 30px;
+}
+.about__cards .cards__text {
+  font-size: 13px;
+  font-weight: var(--fw-400);
+  line-height: 18px;
+}
+.about__cards .cards__boxImg {
+  aspect-ratio: 1/1;
+  min-width: 46px;
+}
+.about__cards .cards__boxImg img {
+  width: 100%;
+}
+
 .nav {
   align-items: center;
+  background-color: var(--bg-primary);
   display: flex;
   height: 7.5rem;
   justify-content: space-between;
@@ -385,6 +424,7 @@ body::-webkit-scrollbar-thumb {
   -webkit-padding-after: 49px;
           padding-block-end: 49px;
   position: relative;
+  transition: box-shadow 0.25s ease;
   width: 100%;
   z-index: 5;
 }
@@ -540,9 +580,13 @@ body::-webkit-scrollbar-thumb {
   overflow: hidden;
 }
 
+.nav__scroll {
+  box-shadow: var(--shadow-btn);
+}
+
 .hero {
   align-items: center;
-  background-image: url(/img/Header.svg);
+  background-image: url(./../../img/Header.png);
   background-repeat: no-repeat;
   background-position: center -57px;
   background-size: cover;
@@ -608,7 +652,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .about {
-  background-image: url(/img/AboutUs2.png);
+  background-image: url(./../../img/AboutUs2.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -627,11 +671,11 @@ body::-webkit-scrollbar-thumb {
 .about__boxImg {
   margin-inline: auto;
   position: relative;
-  width: 100%;
+  width: calc(100% - 20vw);
   z-index: 2;
 }
 .about__boxImg::before {
-  aspect-ratio: 4/3;
+  aspect-ratio: 5/3;
   content: "";
   background-image: var(--color-linear-2);
   bottom: 0;
@@ -642,8 +686,10 @@ body::-webkit-scrollbar-thumb {
   z-index: -1;
 }
 .about__img {
-  width: calc(100% - 20vw);
+  width: 100%;
   margin-inline: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .about__subTitle {
   color: var(--bg-btn);
@@ -684,4 +730,9 @@ body::-webkit-scrollbar-thumb {
   font-weight: var(--fw-400);
   line-height: 34px;
   letter-spacing: 0em;
+}
+.about__cardBox {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }/*# sourceMappingURL=style.css.map */

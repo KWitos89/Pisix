@@ -415,7 +415,6 @@ body::-webkit-scrollbar-thumb {
 
 .nav {
   align-items: center;
-  background-color: var(--bg-primary);
   display: flex;
   height: 7.5rem;
   justify-content: space-between;
@@ -586,7 +585,7 @@ body::-webkit-scrollbar-thumb {
 
 .hero {
   align-items: center;
-  background-image: url(./../../img/Header.png);
+  background-image: url(../../img/Header.png);
   background-repeat: no-repeat;
   background-position: center -57px;
   background-size: cover;
@@ -652,7 +651,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .about {
-  background-image: url(./../../img/AboutUs2.png);
+  background-image: url(../../img/AboutUs2.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -671,7 +670,7 @@ body::-webkit-scrollbar-thumb {
 .about__boxImg {
   margin-inline: auto;
   position: relative;
-  width: calc(100% - 20vw);
+  width: calc(100% - 30vw);
   z-index: 2;
 }
 .about__boxImg::before {
@@ -735,4 +734,10 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+@media (min-width: 48em) {
+  .about {
+    align-items: center;
+    text-align: left;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -51,8 +51,6 @@
         z-index: -1;
 
     }
-
-
     &::before {
         background-color: var(--bg-btn);
         content: "";
@@ -68,5 +66,23 @@
     &:is(:hover, :active, :focus)::before {
         width: 100%;
     }
+}
 
+.company__btn {
+    aspect-ratio: 1/1;
+    align-items: center;
+    background-color: var(--bg-btn);
+    border-radius: 50%;
+    box-shadow: 0px 16px 20px -13px var(--bg-btn);
+    color: var(--color-btn);
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    text-align: center;
+    transition: background-color .25s ease , box-shadow .25s ease;
+
+    &:is(:hover, :active, :focus) {
+        background-color: var(--color-secondary);
+        box-shadow:0px 10px 20px -5px var(--color-secondary);
+    }
 }

@@ -22,6 +22,7 @@
     --color-primary: rgba(116, 220, 223, 1);
     --color-secondary: rgba(0, 120, 138, 1);
     --color-hover: rgba(8, 48, 56, 1);
+    --color-hover-light: rgba(8, 48, 56, .9);
     --color-btn: rgba(248, 245, 255, 1);
     --color-btn-hover: rgba(0, 191, 196, .9);
     --color-linear: linear-gradient(90deg, #00788A 6.67%, #74DCDF 94.66%);
@@ -48,5 +49,5 @@
     --shadow-btnClose: 0px 19px 30px -5px rgba(51, 27, 59, .5);
     --shadow-input: 0px 15px 20px -10px rgba(51, 27, 59, 1);
     --shadow-inset: 0px -1px 20px -15px rgba(51, 27, 59, 1);
-
+    --shadow-btn-dark: 0px 26px 20px -16px rgba(8, 48, 56, .9);
 }

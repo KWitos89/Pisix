@@ -5,7 +5,6 @@ const searchBtn = document.querySelector('.nav__searchBtn');
 const bodyEl = document.body;
 
 
-
 //  Animaited Button Burger //
 
 const clickBurgerBtn = () => {

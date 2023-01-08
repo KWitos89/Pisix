@@ -36,7 +36,6 @@
     }
 
     &__img {
-        width: 100%;
         margin-inline: auto;
         object-fit: cover;
     }
@@ -96,5 +95,28 @@
         
         align-items: center;
         text-align: left;
+
+
+        &__cards{
+            cursor: pointer;
+            max-width: 350px;
+            position: relative;
+            z-index: 5;
+
+            &::after{
+                background-color: inherit;
+                border-radius: 40px;
+                content: "";
+                height: 100%;
+                left: 0;
+                position: absolute;
+                transform: translateX(40px);
+                width: 100%;
+                z-index: -1;
+            }
+
+        }
+
+
     }
 }

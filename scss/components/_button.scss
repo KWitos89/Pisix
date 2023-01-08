@@ -7,6 +7,7 @@
     font-size: clamp(1rem, 0.975rem + 0.125vw, 1.125rem);
     font-family: var(--ff-poppins);
     position: relative;
+    text-align: center;
     transition: background-color .25s ease box-shadow .25s ease;
 
     &:is(:hover, :active) {
@@ -25,4 +26,47 @@
 
 .hero__btn {
     color: var(--color-btn);
+}
+
+.service__btn {
+    background: transparent;
+    font-weight: 500;
+    line-height: 24px;
+    overflow: hidden;
+    padding: 14px 24px;
+
+    &:is(:hover, :active) {
+        background-color: transparent;
+        box-shadow: var(--shadow-btn);
+    }
+
+    &::after {
+        background-color: var(--bg-btn);
+        content: "";
+        height: 100%;
+        left: 0%;
+        position: absolute;
+        top: 0;
+        width: 50%;
+        z-index: -1;
+
+    }
+
+
+    &::before {
+        background-color: var(--bg-btn);
+        content: "";
+        height: 100%;
+        left: 50%;
+        position: absolute;
+        top: 0;
+        transition: width .50s linear;
+        width: 0%;
+        z-index: -1;
+    }
+
+    &:is(:hover, :active, :focus)::before {
+        width: 100%;
+    }
+
 }

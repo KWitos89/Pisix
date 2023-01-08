@@ -68,6 +68,40 @@ h1 {
   font-size: clamp(1.5rem, 0.55rem + 4.75vw, 6.25rem);
 }
 
+.title {
+  color: var(--color-secondary);
+  font-family: var(--ff-josefin);
+  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 1.25rem + 1.25vw, 2.75rem);
+  font-weight: var(--fw-700);
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+.subTitle {
+  color: var(--bg-btn);
+  font-family: var(--ff-poppins);
+  font-weight: var(--fw-500);
+  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 0.85rem + 0.125vw, 1rem);
+  line-height: 24px;
+  position: relative;
+  text-transform: uppercase;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.subTitle::after {
+  background-color: var(--bg-btn);
+  bottom: 0;
+  content: "";
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 50%;
+}
+
 *,
 ::after,
 ::before {
@@ -356,6 +390,7 @@ body::-webkit-scrollbar-thumb {
   font-size: clamp(1rem, 0.975rem + 0.125vw, 1.125rem);
   font-family: var(--ff-poppins);
   position: relative;
+  text-align: center;
   transition: background-color 0.25s ease box-shadow 0.25s ease;
 }
 .btn:is(:hover, :active) {
@@ -374,6 +409,42 @@ body::-webkit-scrollbar-thumb {
 
 .hero__btn {
   color: var(--color-btn);
+}
+
+.service__btn {
+  background: transparent;
+  font-weight: 500;
+  line-height: 24px;
+  overflow: hidden;
+  padding: 14px 24px;
+}
+.service__btn:is(:hover, :active) {
+  background-color: transparent;
+  box-shadow: var(--shadow-btn);
+}
+.service__btn::after {
+  background-color: var(--bg-btn);
+  content: "";
+  height: 100%;
+  left: 0%;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  z-index: -1;
+}
+.service__btn::before {
+  background-color: var(--bg-btn);
+  content: "";
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transition: width 0.5s linear;
+  width: 0%;
+  z-index: -1;
+}
+.service__btn:is(:hover, :active, :focus)::before {
+  width: 100%;
 }
 
 .about__cards {
@@ -411,6 +482,46 @@ body::-webkit-scrollbar-thumb {
 }
 .about__cards .cards__boxImg img {
   width: 100%;
+}
+
+.service__cards {
+  align-items: center;
+  border-radius: 6px;
+  border: 0.1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  max-width: 388px;
+  padding: 45px;
+  row-gap: 1rem;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+.service__cards .cards__boxImg {
+  aspect-ratio: 1/1;
+  width: 50px;
+}
+.service__cards:is(:hover, :active, :focus) {
+  box-shadow: 0px 60px 80px -14px rgba(0, 0, 0, 0.08), 0px -10px 80px -14px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transform: scale(1.04);
+}
+.service__cards .cards__title {
+  font-family: var(--ff-josefin);
+  font-size: var(--fs-30);
+  line-height: 35px;
+  letter-spacing: 0.02em;
+}
+.service__cards .cards__text {
+  font-family: var(--ff-roboto);
+  font-size: 15px;
+  font-weight: var(--fw-400);
+  line-height: 28px;
+}
+
+.cards__active {
+  box-shadow: 0px 60px 80px -14px rgba(0, 0, 0, 0.08), 0px -10px 80px -14px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transform: scale(1.04);
 }
 
 .nav {
@@ -685,7 +796,6 @@ body::-webkit-scrollbar-thumb {
   z-index: -1;
 }
 .about__img {
-  width: 100%;
   margin-inline: auto;
   -o-object-fit: cover;
      object-fit: cover;
@@ -740,4 +850,50 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
     text-align: left;
   }
+  .about__cards {
+    cursor: pointer;
+    max-width: 350px;
+    position: relative;
+    z-index: 5;
+  }
+  .about__cards::after {
+    background-color: inherit;
+    border-radius: 40px;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    transform: translateX(40px);
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.service {
+  padding-block: 90px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}
+.service__subTitle {
+  text-align: center;
+  margin-inline: auto;
+}
+.service__title {
+  text-align: center;
+  max-width: 532px;
+  margin-inline: auto;
+}
+.service__cardsBox {
+  display: grid;
+  gap: 2rem;
+  place-items: center;
+}
+@media (min-width: 48em) {
+  .service__cardsBox {
+    grid-template-columns: repeat(auto-fill, minmax(388px, 1fr));
+  }
+}
+.service__btn {
+  margin-inline: auto;
 }/*# sourceMappingURL=style.css.map */

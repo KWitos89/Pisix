@@ -26,7 +26,6 @@ const mouseEnter = () => {
 
 const mouseUp = () => {
     slider.style.cursor = 'grab'
-    
 };
 
 const press = () => {
@@ -49,7 +48,7 @@ const checkBoundry = () => {
     let inner = innerSlider.getBoundingClientRect();
 
     if (parseInt(innerSlider.style.left) > 0) {
-        innerSlider.style.left = '0px'
+        innerSlider.style.left = 0;
     } else if (inner.right < outer.right) {
         innerSlider.style.left = `-${inner.width - outer.width}px`
     }
@@ -85,6 +84,32 @@ const touchEnd = () => {
 slider.ontouchstart = touchStart;
 slider.ontouchmove = touchMove;
 slider.ontouchend = touchEnd;
+
+function updateSlider() {
+  let width = window.innerWidth;
+  if (width > 760) {
+    slider.removeEventListener('mousedown', mouseDown);
+    slider.removeEventListener('mouseenter', mouseEnter);
+    slider.removeEventListener('mouseup', mouseUp);
+    slider.removeEventListener('mousemove', mouseMove);
+    window.removeEventListener('mouseup', press);
+    slider.ontouchstart = null;
+    slider.ontouchmove = null;
+    slider.ontouchend = null;
+  } else {
+    slider.addEventListener('mousedown', mouseDown);
+    slider.addEventListener('mouseenter', mouseEnter);
+    slider.addEventListener('mouseup', mouseUp);
+    slider.addEventListener('mousemove', mouseMove);
+    window.addEventListener('mouseup', press);
+    slider.ontouchstart = touchStart;
+    slider.ontouchmove = touchMove;
+    slider.ontouchend = touchEnd;
+  }
+}
+
+updateSlider();
+window.onresize = updateSlider;
 
 
 

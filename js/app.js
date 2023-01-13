@@ -1,6 +1,7 @@
-import {} from './MobileMenu.js';
-import {} from './SearchBox.js'
-import {} from './DrasgableSlider.js'
+import * as MobileMenu from './MobileMenu.js';
+import * as SearchBox from './SearchBox.js'
+import * as DrasgableSlider from './DrasgableSlider.js'
+
 
 
 

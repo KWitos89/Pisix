@@ -30,9 +30,9 @@ export const mouseMove = (e) => {
     if (!pressed) return;
     e.preventDefault();
 
-    x = e.offsetX
 
-    innerSlider.style.left = `${x - startx}px`
+
+    innerSlider.style.left = `${e.offsetX - startx}px`
 
     checkBoundry();
 };
@@ -52,7 +52,8 @@ export const checkBoundry = () => {
 export const touchStart = (e) => {
     pressed = true;
     startx = e.touches[0].clientX - innerSlider.offsetLeft;
-    slider.style.cursor = 'grabbing';
+    // slider.style.cursor = 'grabbing';
+
 };
 
 export const touchMove = (e) => {
@@ -105,33 +106,16 @@ window.addEventListener('onresize', updateSlider);
 
 //  Test Code //
 
-// const hoverEfect = (e) => {
+ const items = document.querySelectorAll('.images__items');
 
-//     console.log(e.target)
-//    items.forEach(item => {
-//     item.addEventListener('touchstart', (e) => {
-//         e.target.classList.add('hover');
-//     });
-//     item.addEventListener('touchend', (e) => {
-//         e.target.classList.remove('hover');
-//     });
-// });
-// };
+items.forEach((item) => {
 
-// // items.forEach((item) =>{
-// //     item.addEventListener('click', hoverEfect)
-// // })
-//  window.addEventListener('click', hoverEfect)
-
-const hoverEfect = (e) => {
-    console.log(e.currentTarget)
-    items.forEach(item => {
-        item.addEventListener('touchstart', (e) => {
-            e.currentTarget.classList.add('hover');
-        });
-        item.addEventListener('touchend', (e) => {
-            e.currentTarget.classList.remove('hover');
-        });
+    item.addEventListener('mouseover', function(e){
+        e.target.classList.add('hover');
+        console.log(e.target)
     });
-};
-slider.addEventListener('click', hoverEfect);
+    item.addEventListener('mouseout', function(e){
+        e.target.classList.remove('hover');
+        console.log(e.target)
+    });
+});

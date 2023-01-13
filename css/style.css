@@ -1057,7 +1057,7 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   gap: 10px;
   position: absolute;
-  pointer-events: none;
+  pointer-events: auto;
   top: 0;
   left: 0;
   border: 0.0001px solid rgba(255, 255, 255, 0.0011);

@@ -51,9 +51,9 @@ export const closeOutside = (e) => {
 const resize = () => {
 
 
-    if (window.innerWidth > 665) {
+    if (window.innerWidth > 650) {
         menu.classList.remove('active__menu')
-        clickBurgerBtn()
+        burger.classList.add('no__active')
     }
 };
 

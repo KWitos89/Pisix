@@ -1,5 +1,6 @@
 export const slider = document.querySelector('.images__sliderBox');
 export const innerSlider = document.querySelector('.images__innerList');
+export const items = document.querySelectorAll('.images__items');
 
 
 //  Dragablr Slider Fuction For Images Section //
@@ -11,7 +12,6 @@ export const mouseDown = (e) => {
     pressed = true;
     startx = e.offsetX - innerSlider.offsetLeft;
     slider.style.cursor = 'grabbing'
-
 };
 
 export const mouseEnter = () => {
@@ -24,16 +24,14 @@ export const mouseUp = () => {
 
 export const press = () => {
     pressed = false;
+     slider.style.cursor = 'grab'
 }
 
 export const mouseMove = (e) => {
     if (!pressed) return;
     e.preventDefault();
 
-
-
     innerSlider.style.left = `${e.offsetX - startx}px`
-
     checkBoundry();
 };
 
@@ -48,19 +46,42 @@ export const checkBoundry = () => {
     }
 };
 
+//  Hover Effect Function //
+items.forEach((item) => {
+
+    item.addEventListener('mouseover', function (e) {
+        e.target.classList.toggle('images__items--hover');
+        removeHover()
+    });
+
+    item.addEventListener('mouseout', function (e) {
+        e.target.classList.toggle('images__items--hover');
+    });
+});
+
+const removeHover = (e) => {
+    items.forEach((ite) => {
+        if (ite.classList.contains('images__items--hover')) {
+            ite.classList.remove('images__items--hover')
+        }
+    })
+}
+
 //  Mobile Fuction //
 export const touchStart = (e) => {
     pressed = true;
     startx = e.touches[0].clientX - innerSlider.offsetLeft;
-    // slider.style.cursor = 'grabbing';
+    slider.style.cursor = 'grabbing';
 
 };
 
 export const touchMove = (e) => {
     if (!pressed) return;
     e.preventDefault();
+
     x = e.touches[0].clientX;
     innerSlider.style.left = `${x - startx}px`;
+
     checkBoundry();
 };
 
@@ -68,6 +89,7 @@ export const touchEnd = () => {
     pressed = false;
     slider.style.cursor = 'grab'
 };
+
 
 export const updateSlider = () => {
 
@@ -93,6 +115,9 @@ export const updateSlider = () => {
     }
 }
 
+
+
+
 slider.ontouchstart = touchStart;
 slider.ontouchmove = touchMove;
 slider.ontouchend = touchEnd;
@@ -102,20 +127,3 @@ slider.addEventListener('mouseup', mouseUp);
 slider.addEventListener('mousemove', mouseMove);
 window.addEventListener('mouseup', press);
 window.addEventListener('onresize', updateSlider);
-
-
-//  Test Code //
-
- const items = document.querySelectorAll('.images__items');
-
-items.forEach((item) => {
-
-    item.addEventListener('mouseover', function(e){
-        e.target.classList.add('hover');
-        console.log(e.target)
-    });
-    item.addEventListener('mouseout', function(e){
-        e.target.classList.remove('hover');
-        console.log(e.target)
-    });
-});

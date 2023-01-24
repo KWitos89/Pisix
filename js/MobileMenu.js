@@ -54,6 +54,7 @@ const resize = () => {
     if (window.innerWidth > 650) {
         menu.classList.remove('active__menu')
         burger.classList.add('no__active')
+       bodyEl.classList.remove('body-overflow')
     }
 };
 
